@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Slf4j
-@Service
 @RequiredArgsConstructor
+@Service
 public class SheduledTaskService {
 
     private final StockageService stockageService;
@@ -25,9 +25,12 @@ public class SheduledTaskService {
     public void remplirEau() {
         Optional<Stockage> stockEau = this.stockageService.getStockageEau();
         if (stockEau.isPresent()) {
-            stockEau.get().setQuantiteEau(20000);
+            stockEau.get().getContenu().get("eau");
+            stockEau.get().getContenu().put("eau", stockEau.get().getCapaciteMax());
             this.stockageRepository.save(stockEau.get());
+            log.info("Remplir Eau fini: quantité maintenant "+stockEau.get().getContenu().get("eau"));
         }
-        log.info("Remplir Eau fini: quantité maintenant "+stockEau.get().getQuantiteEau());
+        log.info("Pas de remplissage");
+
     }
 }

@@ -14,6 +14,6 @@ public class StockageServiceImpl implements StockageService {
     private final StockageRepository stockageRepository;
 
     public Optional<Stockage> getStockageEau() {
-        return stockageRepository.findByEau(true);
+        return stockageRepository.findByType("eau");
     }
 }

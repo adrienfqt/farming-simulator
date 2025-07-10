@@ -7,5 +7,5 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface StockageRepository extends JpaRepository<Stockage, UUID> {
-    Optional<Stockage> findByEau(boolean eau);
+    Optional<Stockage> findByType(String type);
 }

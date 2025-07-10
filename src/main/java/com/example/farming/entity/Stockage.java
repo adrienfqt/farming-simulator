@@ -18,14 +18,9 @@ public class Stockage {
     private UUID id;
 
     @Column(nullable = false)
-    private int capaciteMaxContenu = 100000;
+    private int capaciteMax;
 
-    @Column(nullable = false)
-    private int capaciteMaxEau = 20000;
-
-    private int quantiteEau = 20000;
-
-    private boolean eau;
+    private String type;
 
     @ElementCollection
     @CollectionTable(name = "stockage_contenu", joinColumns = @JoinColumn(name = "stockage_id"))
