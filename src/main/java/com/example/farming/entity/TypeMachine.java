@@ -1,4 +1,4 @@
-package entity;
+package com.example.farming.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package entity;
+package com.example.farming.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,14 +14,18 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
-public class Culture {
+public class Machine {
 
     @Id
     @GeneratedValue
     private UUID id;
 
-    private int rendement;
+    private String nom;
+
+    private boolean disponible;
 
     @ManyToMany
-    private List<Machine> machinesRequises;
+    private List<Culture> cultures;
+
+
 }

@@ -1,28 +1,43 @@
-package entity;
+package com.example.farming.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
+import java.time.LocalDateTime;
 import java.util.UUID;
-
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
-public class Lot {
+public class Champ {
 
     @Id
     @GeneratedValue
     private UUID id;
 
-    private List<Champ> champs;
+    private int numero;
+
+    private EtatChamp etat;
+
+    @ManyToOne
+    private Culture culture;
+
+    @ManyToOne
+    private Lot lot;
+
+    private LocalDateTime debutSemis;
+
+
+
+
+
 
 }
