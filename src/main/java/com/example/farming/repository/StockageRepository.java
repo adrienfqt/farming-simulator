@@ -8,4 +8,7 @@ import java.util.UUID;
 
 public interface StockageRepository extends JpaRepository<Stockage, UUID> {
     Optional<Stockage> findByType(String type);
+
+    @Override
+    Optional<Stockage> findById(UUID uuid);
 }

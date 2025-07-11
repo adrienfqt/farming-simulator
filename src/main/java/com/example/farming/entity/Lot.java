@@ -24,6 +24,8 @@ public class Lot {
     @GeneratedValue
     private UUID id;
 
+    private String nom;
+
     @OneToMany
     private List<Champ> champs;
 

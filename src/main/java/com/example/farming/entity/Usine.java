@@ -23,6 +23,9 @@ public class Usine {
     @Column(nullable = false, unique = true)
     private String nom;
 
+    @Enumerated(EnumType.STRING)
+    private TypeUsine typeUsine;
+
     @ElementCollection
     @CollectionTable(name = "usine_intrants", joinColumns = @JoinColumn(name = "usine_id"))
     @MapKeyColumn(name = "produit")
@@ -34,4 +37,8 @@ public class Usine {
 
     @Column(nullable = false)
     private int multiplicateur;
+
+    private int capaciteTraitement = 100;
+
+    private boolean enPause;
 }

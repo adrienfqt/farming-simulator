@@ -27,5 +27,9 @@ public class Machine {
     @ManyToMany
     private List<Culture> cultures;
 
+    @ManyToOne
+    private TypeMachine typeMachine;
+
+    private int quantite;
 
 }

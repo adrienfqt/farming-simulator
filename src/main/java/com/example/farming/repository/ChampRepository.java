@@ -15,4 +15,7 @@ public interface ChampRepository extends JpaRepository<Champ, UUID> {
     Optional<Champ> findByEtat(EtatChamp etat);
 
     Optional<Champ> findFirstByEtat(EtatChamp etat);
+
+    @Override
+    Optional<Champ> findById(UUID uuid);
 }

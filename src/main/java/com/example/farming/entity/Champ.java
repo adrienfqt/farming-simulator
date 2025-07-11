@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,9 +36,21 @@ public class Champ {
 
     private LocalDateTime debutSemis;
 
+    private boolean fertilise;
 
+    private LocalDateTime dateFertilisation;
 
+    private double rendementBoost;
 
+    private LocalDateTime dateRecoltePrevue;
 
+    private LocalDateTime dateDerniereRecolte;
+
+    private double rendementDerniereRecolte;
+
+    private double orDerniereRecolte;
+
+    @OneToOne
+    private FermeAnimaliere fermeAnimaliere;
 
 }

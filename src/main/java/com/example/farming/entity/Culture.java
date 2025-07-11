@@ -24,6 +24,11 @@ public class Culture {
 
     private int rendement;
 
+    private boolean besoinLabourage;
+
+    @Enumerated(EnumType.STRING)
+    private TypeCulture typeCulture;
+
     @ManyToMany
     private List<Machine> machinesRequises;
 }

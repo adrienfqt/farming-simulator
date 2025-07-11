@@ -31,4 +31,10 @@ public class Ferme {
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Usine> usines;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<FermeAnimaliere> fermesAnimaliere;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Serre> serres;
 }

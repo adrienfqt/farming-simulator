@@ -18,11 +18,9 @@ public class TypeMachine {
 
     private int quantiteDisponible;
 
-    private String categorie; // Ex : "Moissonneuse", "Planteuse", "Véhicule", etc.
+    private String categorie; 
 
-    private String specialisation; // Ex : "Raisin", "Olive", null si généraliste
-
-    // Getters & Setters
+    private String specialisation; 
 
     public Long getId() {
         return id;

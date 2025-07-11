@@ -1,10 +1,13 @@
 package com.example.farming.service;
 
-import com.example.farming.entity.Stockage;
+import com.example.farming.entity.TypeStockage;
+import java.util.Map;
 
-import java.util.Optional;
-
-public interface StockageService {
-
-    public Optional<Stockage> getStockageEau();
+public interface StorageService {
+    void addProduct(String product, int quantity, TypeStockage type);
+    void removeProduct(String product, int quantity, TypeStockage type);
+    boolean isFull(TypeStockage type);
+    int getAvailableSpace(TypeStockage type);
+    Map<String, Integer> getContents(TypeStockage type);
+    void clearProduct(String product, TypeStockage type);
 }

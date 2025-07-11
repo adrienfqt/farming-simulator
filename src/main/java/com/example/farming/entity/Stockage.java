@@ -20,7 +20,11 @@ public class Stockage {
     @Column(nullable = false)
     private int capaciteMax;
 
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private TypeStockage type;
+
+    @Column(nullable = false)
+    private boolean principal;
 
     @ElementCollection
     @CollectionTable(name = "stockage_contenu", joinColumns = @JoinColumn(name = "stockage_id"))
